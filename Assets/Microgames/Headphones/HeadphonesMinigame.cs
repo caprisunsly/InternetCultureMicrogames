@@ -5,15 +5,15 @@ public class HeadphonesMinigame : MonoBehaviour
     private void OnEnable()
     {
         //tunes into the radio station
-        MinigameManager.OnMinigameStarted += MinigameStart;
-        MinigameManager.OnMinigameEnded += MinigameEnd;
+        MicrogameManager.OnMicrogameStarted += MinigameStart;
+        MicrogameManager.OnMicrogameEnded += MinigameEnd;
     }
 
     private void OnDisable()
     {
         //tunes out of the radio station
-        MinigameManager.OnMinigameStarted -= MinigameStart;
-        MinigameManager.OnMinigameEnded -= MinigameEnd;
+        MicrogameManager.OnMicrogameStarted -= MinigameStart;
+        MicrogameManager.OnMicrogameEnded -= MinigameEnd;
     }
 
     void MinigameStart()

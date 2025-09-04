@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinigameManager : MonoBehaviour
+public class MicrogameManager : MonoBehaviour
 {
     [SerializeField] List<SO_Microgame> m_MicrogameMasterList = new();
     List<SO_Microgame> m_MicrogameCurrentList = new();
 
     //radio stations
-    public static event Action OnMinigameStarted;
-    public static event Action OnMinigameEnded;
+    public static event Action OnMicrogameStarted;
+    public static event Action OnMicrogameEnded;
 
     //choose a game from current list. if empty, pull from master list
     //pick a random index from current list
