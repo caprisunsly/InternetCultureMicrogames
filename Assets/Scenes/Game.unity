@@ -513,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ca809ae5429fc478db2d781619105e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MicrogameMasterList: []
 --- !u!4 &1623069668
 Transform:
   m_ObjectHideFlags: 0
