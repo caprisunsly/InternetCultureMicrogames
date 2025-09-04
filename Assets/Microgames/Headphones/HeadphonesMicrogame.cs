@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HeadphonesMinigame : MonoBehaviour
+public class HeadphonesMicrogame : MicrogameBase
 {
     private void OnEnable()
     {

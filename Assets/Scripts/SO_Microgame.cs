@@ -5,5 +5,6 @@ using UnityEngine;
 public class SO_Microgame : ScriptableObject
 {
     public string sceneName;
-    public string s;
+    public string gamePrompt;
+    public float baseTimeLimit;
 }
