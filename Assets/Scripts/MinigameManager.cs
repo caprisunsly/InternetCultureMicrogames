@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class MinigameManager : MonoBehaviour
@@ -10,4 +11,9 @@ public class MinigameManager : MonoBehaviour
     //choose game
     //wait until game ends
     //choose new game
+
+     IEnumerator MinigameLoop()
+    {
+
+    }
 }
