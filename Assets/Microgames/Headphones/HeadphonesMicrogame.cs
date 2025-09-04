@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeadphonesMicrogame : MicrogameBase
 {
+    [SerializeField] Image image;
+    [SerializeField] Sprite s1, s2;
+    bool t;
+
     private void OnEnable()
     {
         //tunes into the radio station
