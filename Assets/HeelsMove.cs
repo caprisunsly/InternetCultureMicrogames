@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class HeelsMove : MonoBehaviour
@@ -6,6 +7,10 @@ public class HeelsMove : MonoBehaviour
     private float input;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
+    [SerializeField] int maxJumps;
+    int jumpsRemaining;
+
+
 
     void Update()
     {
@@ -19,9 +24,19 @@ public class HeelsMove : MonoBehaviour
         }
         else input = 0;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
         {
+            rb.linearVelocityY = 0;
             rb.AddForceY(jumpForce, ForceMode2D.Impulse);
+            jumpsRemaining = jumpsRemaining - 1;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            jumpsRemaining = maxJumps;
         }
     }
 
