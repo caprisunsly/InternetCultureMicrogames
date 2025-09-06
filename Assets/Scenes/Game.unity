@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oneShotSource: {fileID: 1160296761}
-  headphones_success: {fileID: 0}
+  headphones_success: {fileID: 8300000, guid: 2d907f3217d29f34990d3871f7c5e1be, type: 3}
   headphones_fail: {fileID: 0}
 --- !u!4 &1160296763
 Transform:
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 1623069668}
   - component: {fileID: 1623069667}
   m_Layer: 0
-  m_Name: Minigame Manager
+  m_Name: Microgame Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,6 +515,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MicrogameMasterList:
   - {fileID: 11400000, guid: 96a3c21dcc312034c9019043394fb7b4, type: 2}
+  timeBetweenGames: 4
+  timeScaleReduction: 0.1
+  gamesBetweenSpeedUp: 5
+  maxHealth: 4
 --- !u!4 &1623069668
 Transform:
   m_ObjectHideFlags: 0

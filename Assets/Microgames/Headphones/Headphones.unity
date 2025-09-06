@@ -163,8 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 970387683}
-  s1: {fileID: 818303291, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
-  s2: {fileID: -525914980, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  slider: {fileID: 1424338800}
+  babyfaces:
+  - {fileID: 1917567378, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  - {fileID: -1627170953, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  - {fileID: -889022828, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  - {fileID: 784744165, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  - {fileID: -318253008, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  - {fileID: -1997160193, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
+  - {fileID: -891171698, guid: da4e4176c20c324459150a2dd03e99ad, type: 3}
 --- !u!1 &112246137
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -290,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -588,19 +595,19 @@ MonoBehaviour:
   m_HandleRect: {fileID: 580452782}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 7
+  m_MaxValue: 6
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1532061}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1532063}
+        m_TargetAssemblyTypeName: HeadphonesMicrogame, Assembly-CSharp
+        m_MethodName: ChangeFaceSprite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

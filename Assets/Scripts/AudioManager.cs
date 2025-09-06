@@ -16,7 +16,11 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         //singleton pattern. makes it easier to get this component as a variable
-        if (instance == null) instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else Destroy(gameObject);
     }
 

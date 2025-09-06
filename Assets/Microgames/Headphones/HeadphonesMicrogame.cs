@@ -1,33 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HeadphonesMicrogame : MicrogameBase
 {
     [SerializeField] Image image;
-    [SerializeField] Sprite s1, s2;
-    bool t;
+    [SerializeField] Slider slider;
+    [SerializeField] List<Sprite> babyfaces;
+    [SerializeField] List<Sprite> successFaces;
 
-    private void OnEnable()
+    [SerializeField] float animationSpeed;
+
+    Coroutine c_SuccessSpriteLoop;
+
+    private void Start()
     {
-        //tunes into the radio station
-        MicrogameManager.OnMicrogameStarted += MinigameStart;
-        MicrogameManager.OnMicrogameEnded += MinigameEnd;
+        image.sprite = babyfaces[0];
+        slider.maxValue = babyfaces.Count - 1;
     }
 
-    private void OnDisable()
+    public void ChangeFaceSprite()
     {
-        //tunes out of the radio station
-        MicrogameManager.OnMicrogameStarted -= MinigameStart;
-        MicrogameManager.OnMicrogameEnded -= MinigameEnd;
+        image.sprite = babyfaces[Mathf.RoundToInt(slider.value)];
+        if (slider.value == slider.maxValue)
+        {
+            //disable slider
+            slider.enabled = false;
+            //broadcast microgamesuccess
+            BroadcastGameSuccess();
+            //heels lip flaps
+            c_SuccessSpriteLoop = StartCoroutine(SuccessSpriteLoop());
+            //heels says pronouns
+            AudioManager.instance.PlayOneShot(AudioManager.instance.headphones_success, 0.8f);
+        }
     }
 
-    void MinigameStart()
+    private void OnDestroy()
     {
-
+        if (c_SuccessSpriteLoop != null) StopCoroutine(c_SuccessSpriteLoop);
     }
 
-    void MinigameEnd()
+    IEnumerator SuccessSpriteLoop()
     {
-
+        float loopTime = 5;
+        int index = 0;
+       
+        while (loopTime > 0)
+        {
+            //set sprite to the sprite at position of "index" in the successFaces list
+            image.sprite = successFaces[index];
+            //reducing loop time so it doesn't run infinitely
+            loopTime = loopTime - 1 / animationSpeed;
+            //pause loop execution for amount of time based on the set animation speed
+            yield return new WaitForSeconds(1 / animationSpeed);
+            //increment index by 1
+            index = index + 1;
+            //check if value of index is higher than the list count, if so reset to start of list
+            if (index > successFaces.Count - 1) index = 0;
+        }
     }
 }
